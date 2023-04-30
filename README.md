@@ -42,3 +42,6 @@ MatchMap supports routing across almost all map elements, including intersection
 ![image](https://user-images.githubusercontent.com/105998663/235361616-7ee844ce-5b3a-4869-a468-39082060cbe3.png)
 
 Routing utilizes the Dijkstra Algorithm, the industry standard for single source single destination graph problems (also used by Google Maps). This leads to optimal routes with the shortes travel times.
+
+## Other
+In addition to the actual graphical program, in the ECE297 course we were also asked to solve the travelling courier problem (extension of travelling salesman problem). Our team utilized mutliple source Dijkstra, Greedy Algorithms, 3-OPT and Simulated Annealing to recieve excellent QoR (Quality of Route) scores from the autotester. The goal was to get as close as possible to the optimal solution. Our scores ranged from 88290.3 (Hard difficulty) to 128671.8 (Extreme difficulty) with an average score of 105995.6.
