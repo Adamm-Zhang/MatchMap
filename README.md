@@ -19,6 +19,11 @@ MatchMap includes a custom icon set as well:
 The colour scheme is pastel to reduce eye strain and well differentiated to provide easy distinction between map elements:
 ![image](https://user-images.githubusercontent.com/105998663/235359975-1838ee1e-19b9-4eed-b57a-f08b8cd8447f.png)
 
+The user interface is extremely responsive, getting between 40-100 fps on average depending on the map selected. The map to view can be selected using the select map button:  
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/105998663/235361937-5a556ce7-ff6b-43b3-aaf1-e9319e7de2e3.png" />
+</p>
+
 ## Searching
 MatchMap has excellent searching features, with almost every map element being searchable. This includes streets, features, intersections, and POIs. For example, searching for Tim Hortons:
 ![image](https://user-images.githubusercontent.com/105998663/235360314-430c3694-8adf-4b27-9980-96a7a7c56f9c.png)
@@ -27,3 +32,13 @@ Every search dialog box also includes autocomplete:
 ![image](https://user-images.githubusercontent.com/105998663/235361038-21d3af72-7682-46aa-aa51-0d2b8a15f13a.png)
 
 ## Routing
+MatchMap has great routing features, with two input options: either the search bars, or simply clicking on two intersections on the map.
+![image](https://user-images.githubusercontent.com/105998663/235361345-7599030b-1910-40d2-8380-fe0426a85af7.png)
+
+Additionally, MatchMap supports making multiple routes at once, by continuing to provide intersection inputs. These routes are stored until the "Clear All Intersections" button is pressed. This is useful to create a continuous path from one location to another:
+![image](https://user-images.githubusercontent.com/105998663/235361443-f58c3369-2ed7-4a87-9c8d-665978b5a9f9.png)
+
+MatchMap supports routing across almost all map elements, including intersections, streets, POIs and Features. Once a route is provided, the directions are provided in an easy to use dialog box to the left along with the estimated car travel time:
+![image](https://user-images.githubusercontent.com/105998663/235361616-7ee844ce-5b3a-4869-a468-39082060cbe3.png)
+
+Routing utilizes the Dijkstra Algorithm, the industry standard for single source single destination graph problems (also used by Google Maps). This leads to optimal routes with the shortes travel times.
