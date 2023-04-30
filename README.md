@@ -32,7 +32,7 @@ Every search dialog box also includes autocomplete:
 ![image](https://user-images.githubusercontent.com/105998663/235361038-21d3af72-7682-46aa-aa51-0d2b8a15f13a.png)
 
 ## Routing
-MatchMap has great routing features, with two input options: either the search bars, or simply clicking on two intersections on the map.
+MatchMap has great routing features, with two input options: either the search bars, or simply clicking on two intersections on the map. When you click or search for an intersection a useful dialog box appears on the right that shows the intersection location, connected streets, their speed limits, and their one way statuses.
 ![image](https://user-images.githubusercontent.com/105998663/235361345-7599030b-1910-40d2-8380-fe0426a85af7.png)
 
 Additionally, MatchMap supports making multiple routes at once, by continuing to provide intersection inputs. These routes are stored until the "Clear All Intersections" button is pressed. This is useful to create a continuous path from one location to another:
