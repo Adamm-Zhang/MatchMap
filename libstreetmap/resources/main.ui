@@ -1,0 +1,996 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated with glade 3.38.2 -->
+<interface>
+  <requires lib="gtk+" version="3.20"/>
+  <object class="GtkTextBuffer" id="HelpTutorialBuffer">
+    <property name="text" translatable="yes">Instructions for Pathfinding
+1. Toggle "Pathfind" Button On
+2. Open "Search for Map Elements"
+3. Enter any two map elements</property>
+  </object>
+  <object class="GtkTextBuffer" id="IntersectionInfo"/>
+  <object class="GtkTextBuffer" id="PathInstructionBuffer">
+    <property name="text" translatable="yes">Path Instructions:
+No Path Loaded
+</property>
+  </object>
+  <object class="GtkListStore" id="feature1ListStore">
+    <columns>
+      <!-- column-name featureCol1 -->
+      <column type="gchararray"/>
+    </columns>
+  </object>
+  <object class="GtkEntryCompletion" id="feature1Completion">
+    <property name="model">feature1ListStore</property>
+    <property name="text-column">0</property>
+    <child>
+      <object class="GtkCellRendererText" id="feature1Rend"/>
+      <attributes>
+        <attribute name="text">0</attribute>
+      </attributes>
+    </child>
+  </object>
+  <object class="GtkListStore" id="feature2ListStore">
+    <columns>
+      <!-- column-name featureCol2 -->
+      <column type="gchararray"/>
+    </columns>
+  </object>
+  <object class="GtkEntryCompletion" id="feature2Completion">
+    <property name="model">feature2ListStore</property>
+    <property name="text-column">0</property>
+    <child>
+      <object class="GtkCellRendererText" id="feature2Rend"/>
+      <attributes>
+        <attribute name="text">0</attribute>
+      </attributes>
+    </child>
+  </object>
+  <object class="GtkListStore" id="intersect1ListStore">
+    <columns>
+      <!-- column-name intersectCol1 -->
+      <column type="gchararray"/>
+    </columns>
+  </object>
+  <object class="GtkEntryCompletion" id="intersect1Completion">
+    <property name="model">intersect1ListStore</property>
+    <property name="text-column">0</property>
+    <child>
+      <object class="GtkCellRendererText" id="intersect1CellRend"/>
+      <attributes>
+        <attribute name="text">0</attribute>
+      </attributes>
+    </child>
+  </object>
+  <object class="GtkListStore" id="intersect2ListStore">
+    <columns>
+      <!-- column-name intersectCol2 -->
+      <column type="gchararray"/>
+    </columns>
+  </object>
+  <object class="GtkEntryCompletion" id="intersect2Completion">
+    <property name="model">intersect2ListStore</property>
+    <property name="text-column">0</property>
+    <child>
+      <object class="GtkCellRendererText" id="intersect2CellRend"/>
+      <attributes>
+        <attribute name="text">0</attribute>
+      </attributes>
+    </child>
+  </object>
+  <object class="GtkListStore" id="intersect3ListStore">
+    <columns>
+      <!-- column-name intersectCol3 -->
+      <column type="gchararray"/>
+    </columns>
+  </object>
+  <object class="GtkEntryCompletion" id="intersect3Completion">
+    <property name="model">intersect3ListStore</property>
+    <property name="text-column">0</property>
+    <child>
+      <object class="GtkCellRendererText" id="intersect3Rend"/>
+      <attributes>
+        <attribute name="text">0</attribute>
+      </attributes>
+    </child>
+  </object>
+  <object class="GtkListStore" id="intersect4ListStore">
+    <columns>
+      <!-- column-name intersectCol4 -->
+      <column type="gchararray"/>
+    </columns>
+    <data>
+      <row>
+        <col id="0" translatable="yes">qwert</col>
+      </row>
+    </data>
+  </object>
+  <object class="GtkEntryCompletion" id="intersect4Completion">
+    <property name="model">intersect4ListStore</property>
+    <property name="text-column">0</property>
+    <child>
+      <object class="GtkCellRendererText" id="intersect4CellRend"/>
+      <attributes>
+        <attribute name="text">0</attribute>
+      </attributes>
+    </child>
+  </object>
+  <object class="GtkListStore" id="poi1ListStore">
+    <columns>
+      <!-- column-name poiCol1 -->
+      <column type="gchararray"/>
+    </columns>
+  </object>
+  <object class="GtkEntryCompletion" id="poi1Completion">
+    <property name="model">poi1ListStore</property>
+    <property name="text-column">0</property>
+    <child>
+      <object class="GtkCellRendererText" id="poi1Rend"/>
+      <attributes>
+        <attribute name="text">0</attribute>
+      </attributes>
+    </child>
+  </object>
+  <object class="GtkListStore" id="poi2ListStore">
+    <columns>
+      <!-- column-name poi2col -->
+      <column type="gchararray"/>
+    </columns>
+  </object>
+  <object class="GtkEntryCompletion" id="poi2Completion">
+    <property name="model">poi2ListStore</property>
+    <property name="text-column">0</property>
+    <child>
+      <object class="GtkCellRendererText" id="poi2Rend"/>
+      <attributes>
+        <attribute name="text">0</attribute>
+      </attributes>
+    </child>
+  </object>
+  <object class="GtkListStore" id="street1ListStore">
+    <columns>
+      <!-- column-name streetCol1 -->
+      <column type="gchararray"/>
+    </columns>
+  </object>
+  <object class="GtkEntryCompletion" id="street1Completion">
+    <property name="model">street1ListStore</property>
+    <property name="text-column">0</property>
+    <child>
+      <object class="GtkCellRendererText" id="street1Rend"/>
+      <attributes>
+        <attribute name="text">0</attribute>
+      </attributes>
+    </child>
+  </object>
+  <object class="GtkListStore" id="street2ListStore">
+    <columns>
+      <!-- column-name streetCol2 -->
+      <column type="gchararray"/>
+    </columns>
+  </object>
+  <object class="GtkEntryCompletion" id="street2Completion">
+    <property name="model">street2ListStore</property>
+    <property name="text-column">0</property>
+    <child>
+      <object class="GtkCellRendererText" id="street2Rend"/>
+      <attributes>
+        <attribute name="text">0</attribute>
+      </attributes>
+    </child>
+  </object>
+  <object class="GtkWindow" id="MainWindow">
+    <property name="visible">True</property>
+    <property name="can-focus">False</property>
+    <property name="title">MatchMap</property>
+    <property name="default-width">800</property>
+    <property name="default-height">600</property>
+    <child>
+      <object class="GtkOverlay" id="MainOverlay">
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+        <child>
+          <object class="GtkDrawingArea" id="MainCanvas">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="hexpand">True</property>
+            <property name="vexpand">True</property>
+          </object>
+          <packing>
+            <property name="index">-1</property>
+          </packing>
+        </child>
+        <child type="overlay">
+          <object class="GtkFixed" id="FixedPlot">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <child>
+              <!-- n-columns=1 n-rows=2 -->
+              <object class="GtkGrid" id="MapLoader">
+                <property name="width-request">100</property>
+                <property name="height-request">80</property>
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <child>
+                  <object class="GtkComboBoxText" id="map_loader_dropdown">
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="receives-default">True</property>
+                    <property name="active">0</property>
+                    <property name="active-id">select_map</property>
+                    <items>
+                      <item id="select_map" translatable="yes">select map</item>
+                      <item id="beijing" translatable="yes">Beijing, China</item>
+                      <item id="cairo" translatable="yes">Cairo, Egypt</item>
+                      <item id="cape-town" translatable="yes">Cape Town, South Africa</item>
+                      <item id="golden-horseshoe" translatable="yes">Golden Horseshoe, Canada</item>
+                      <item id="hamilton" translatable="yes">Hamilton, Canada</item>
+                      <item id="hong-kong" translatable="yes">Hong Kong, China</item>
+                      <item id="iceland" translatable="yes">Iceland</item>
+                      <item id="interlaken" translatable="yes">Interlaken, Switzerland</item>
+                      <item id="kyiv" translatable="yes">Kyiv, Ukraine</item>
+                      <item id="london" translatable="yes">London, England</item>
+                      <item id="new-delhi" translatable="yes">New Delhi, India</item>
+                      <item id="new-york" translatable="yes">New York, USA</item>
+                      <item id="saint-helena" translatable="yes">Saint Helena</item>
+                      <item id="rio-de-janeiro" translatable="yes">Rio de Janeiro, Brazil</item>
+                      <item id="singapore" translatable="yes">Singapore</item>
+                      <item id="sydney" translatable="yes">Sydney, Australia</item>
+                      <item id="tehran" translatable="yes">Tehran, Iran</item>
+                      <item id="japan" translatable="yes">Tokyo, Japan</item>
+                      <item id="toronto" translatable="yes">Toronto, Canada</item>
+                    </items>
+                  </object>
+                  <packing>
+                    <property name="left-attach">0</property>
+                    <property name="top-attach">0</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkButton" id="map_loader_button">
+                    <property name="label" translatable="yes">Load in New Map</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="focus-on-click">False</property>
+                    <property name="receives-default">True</property>
+                  </object>
+                  <packing>
+                    <property name="left-attach">0</property>
+                    <property name="top-attach">1</property>
+                  </packing>
+                </child>
+              </object>
+              <packing>
+                <property name="y">165</property>
+              </packing>
+            </child>
+            <child>
+              <!-- n-columns=3 n-rows=5 -->
+              <object class="GtkGrid" id="PanningTools">
+                <property name="width-request">100</property>
+                <property name="height-request">80</property>
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="halign">end</property>
+                <property name="valign">end</property>
+                <child>
+                  <object class="GtkButton" id="ProceedButton">
+                    <property name="label" translatable="yes">Proceed</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="receives-default">True</property>
+                  </object>
+                  <packing>
+                    <property name="left-attach">0</property>
+                    <property name="top-attach">4</property>
+                    <property name="width">3</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkButton" id="UpButton">
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="receives-default">True</property>
+                    <child>
+                      <object class="GtkArrow" id="UpArrow">
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="arrow-type">up</property>
+                      </object>
+                    </child>
+                  </object>
+                  <packing>
+                    <property name="left-attach">1</property>
+                    <property name="top-attach">1</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkButton" id="DownButton">
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="receives-default">True</property>
+                    <child>
+                      <object class="GtkArrow" id="DownArrow">
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="arrow-type">down</property>
+                      </object>
+                    </child>
+                  </object>
+                  <packing>
+                    <property name="left-attach">1</property>
+                    <property name="top-attach">3</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkButton" id="LeftButton">
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="receives-default">True</property>
+                    <child>
+                      <object class="GtkArrow" id="LeftArrow">
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="arrow-type">left</property>
+                      </object>
+                    </child>
+                  </object>
+                  <packing>
+                    <property name="left-attach">0</property>
+                    <property name="top-attach">2</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkButton" id="RightButton">
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="receives-default">True</property>
+                    <child>
+                      <object class="GtkArrow" id="RightArrow">
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                      </object>
+                    </child>
+                  </object>
+                  <packing>
+                    <property name="left-attach">2</property>
+                    <property name="top-attach">2</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkBox" id="PanningBox">
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="orientation">vertical</property>
+                    <child>
+                      <object class="GtkButton" id="ZoomInButton">
+                        <property name="visible">True</property>
+                        <property name="can-focus">True</property>
+                        <property name="receives-default">True</property>
+                        <property name="halign">end</property>
+                        <property name="valign">start</property>
+                        <property name="relief">half</property>
+                        <child>
+                          <object class="GtkImage">
+                            <property name="visible">True</property>
+                            <property name="can-focus">False</property>
+                            <property name="stock">gtk-zoom-in</property>
+                            <property name="icon_size">5</property>
+                          </object>
+                        </child>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">0</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="ZoomOutButton">
+                        <property name="visible">True</property>
+                        <property name="can-focus">True</property>
+                        <property name="receives-default">True</property>
+                        <property name="halign">end</property>
+                        <property name="valign">start</property>
+                        <property name="relief">half</property>
+                        <child>
+                          <object class="GtkImage">
+                            <property name="width-request">0</property>
+                            <property name="height-request">0</property>
+                            <property name="visible">True</property>
+                            <property name="can-focus">False</property>
+                            <property name="stock">gtk-zoom-out</property>
+                            <property name="icon_size">5</property>
+                          </object>
+                        </child>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">1</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="ZoomFitButton">
+                        <property name="visible">True</property>
+                        <property name="can-focus">True</property>
+                        <property name="receives-default">True</property>
+                        <property name="halign">end</property>
+                        <property name="valign">start</property>
+                        <property name="relief">half</property>
+                        <child>
+                          <object class="GtkImage">
+                            <property name="visible">True</property>
+                            <property name="can-focus">False</property>
+                            <property name="stock">gtk-media-rewind</property>
+                            <property name="icon_size">5</property>
+                          </object>
+                        </child>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">2</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="toggle_bg">
+                        <property name="visible">True</property>
+                        <property name="can-focus">True</property>
+                        <property name="receives-default">True</property>
+                        <property name="halign">end</property>
+                        <property name="valign">start</property>
+                        <property name="relief">half</property>
+                        <child>
+                          <object class="GtkImage">
+                            <property name="visible">True</property>
+                            <property name="can-focus">False</property>
+                            <property name="stock">gtk-about</property>
+                            <property name="icon_size">5</property>
+                          </object>
+                        </child>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">3</property>
+                      </packing>
+                    </child>
+                  </object>
+                  <packing>
+                    <property name="left-attach">2</property>
+                    <property name="top-attach">0</property>
+                  </packing>
+                </child>
+                <child>
+                  <placeholder/>
+                </child>
+                <child>
+                  <placeholder/>
+                </child>
+                <child>
+                  <placeholder/>
+                </child>
+                <child>
+                  <placeholder/>
+                </child>
+                <child>
+                  <placeholder/>
+                </child>
+                <child>
+                  <placeholder/>
+                </child>
+                <child>
+                  <placeholder/>
+                </child>
+              </object>
+              <packing>
+                <property name="x">750</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="SearchRevealer">
+                <property name="label" translatable="yes">Search for Map Elements</property>
+                <property name="height-request">34</property>
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="receives-default">True</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkToggleButton" id="toggle_pathFind">
+                <property name="label" translatable="yes">Route</property>
+                <property name="width-request">34</property>
+                <property name="height-request">34</property>
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="receives-default">True</property>
+                <property name="has-tooltip">True</property>
+              </object>
+              <packing>
+                <property name="x">180</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkToggleButton" id="toggle_subways">
+                <property name="label" translatable="yes">Subways</property>
+                <property name="width-request">80</property>
+                <property name="height-request">-1</property>
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="receives-default">True</property>
+              </object>
+              <packing>
+                <property name="x">232</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkToggleButton" id="toggle_featureNames">
+                <property name="label" translatable="yes">Features</property>
+                <property name="width-request">80</property>
+                <property name="height-request">1</property>
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="receives-default">True</property>
+              </object>
+              <packing>
+                <property name="x">315</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkToggleButton" id="toggle_POI">
+                <property name="label" translatable="yes">POI</property>
+                <property name="width-request">45</property>
+                <property name="height-request">-1</property>
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="receives-default">True</property>
+                <property name="active">True</property>
+              </object>
+              <packing>
+                <property name="x">399</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkToggleButton" id="toggle_POI_names">
+                <property name="label" translatable="yes">POI Names</property>
+                <property name="width-request">100</property>
+                <property name="height-request">0</property>
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="receives-default">True</property>
+              </object>
+              <packing>
+                <property name="x">448</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkScrolledWindow" id="IntersectionPopUp">
+                <property name="width-request">100</property>
+                <property name="height-request">80</property>
+                <property name="can-focus">True</property>
+                <property name="hscrollbar-policy">never</property>
+                <property name="vscrollbar-policy">never</property>
+                <property name="shadow-type">etched-in</property>
+                <child>
+                  <object class="GtkTextView" id="IntersectionPopUpTextView">
+                    <property name="width-request">250</property>
+                    <property name="height-request">100</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="left-margin">5</property>
+                    <property name="right-margin">5</property>
+                    <property name="top-margin">5</property>
+                    <property name="bottom-margin">5</property>
+                    <property name="indent">5</property>
+                    <property name="buffer">IntersectionInfo</property>
+                  </object>
+                </child>
+              </object>
+              <packing>
+                <property name="x">545</property>
+                <property name="y">300</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="HelpRevealer">
+                <property name="label" translatable="yes">Search Help</property>
+                <property name="width-request">-1</property>
+                <property name="height-request">34</property>
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="receives-default">True</property>
+                <property name="halign">start</property>
+                <property name="valign">start</property>
+              </object>
+              <packing>
+                <property name="x">655</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkRevealer" id="RevealHelp">
+                <property name="width-request">100</property>
+                <property name="height-request">80</property>
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="halign">start</property>
+                <property name="valign">start</property>
+                <property name="margin-top">36</property>
+                <property name="transition-type">none</property>
+                <child>
+                  <object class="GtkScrolledWindow" id="HelpScrollWindow">
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="hscrollbar-policy">never</property>
+                    <property name="vscrollbar-policy">never</property>
+                    <property name="shadow-type">etched-in</property>
+                    <child>
+                      <object class="GtkTextView" id="HelpTextView">
+                        <property name="visible">True</property>
+                        <property name="can-focus">True</property>
+                        <property name="left-margin">5</property>
+                        <property name="right-margin">5</property>
+                        <property name="top-margin">5</property>
+                        <property name="bottom-margin">5</property>
+                        <property name="buffer">HelpTutorialBuffer</property>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+              </object>
+              <packing>
+                <property name="x">505</property>
+              </packing>
+            </child>
+            <child>
+              <!-- n-columns=2 n-rows=2 -->
+              <object class="GtkGrid" id="PathGrid">
+                <property name="width-request">100</property>
+                <property name="height-request">80</property>
+                <property name="can-focus">False</property>
+                <child>
+                  <object class="GtkScrolledWindow" id="PathScrollWindow">
+                    <property name="width-request">100</property>
+                    <property name="height-request">80</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="hscrollbar-policy">never</property>
+                    <property name="vscrollbar-policy">never</property>
+                    <property name="shadow-type">etched-in</property>
+                    <child>
+                      <object class="GtkTextView" id="PathTextView">
+                        <property name="width-request">208</property>
+                        <property name="height-request">100</property>
+                        <property name="visible">True</property>
+                        <property name="can-focus">True</property>
+                        <property name="left-margin">5</property>
+                        <property name="right-margin">5</property>
+                        <property name="top-margin">5</property>
+                        <property name="bottom-margin">5</property>
+                        <property name="buffer">PathInstructionBuffer</property>
+                      </object>
+                    </child>
+                  </object>
+                  <packing>
+                    <property name="left-attach">0</property>
+                    <property name="top-attach">0</property>
+                    <property name="width">2</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkButton" id="PathPrevious">
+                    <property name="label" translatable="yes">Previous</property>
+                    <property name="width-request">104</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="receives-default">True</property>
+                  </object>
+                  <packing>
+                    <property name="left-attach">0</property>
+                    <property name="top-attach">1</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkButton" id="PathNext">
+                    <property name="label" translatable="yes">Next</property>
+                    <property name="width-request">104</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="receives-default">True</property>
+                  </object>
+                  <packing>
+                    <property name="left-attach">1</property>
+                    <property name="top-attach">1</property>
+                  </packing>
+                </child>
+              </object>
+              <packing>
+                <property name="y">240</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="IntersectionClear">
+                <property name="label" translatable="yes">Clear All Highlights</property>
+                <property name="width-request">-1</property>
+                <property name="height-request">-1</property>
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="receives-default">True</property>
+                <property name="halign">start</property>
+                <property name="valign">start</property>
+              </object>
+              <packing>
+                <property name="y">132</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="pass-through">True</property>
+            <property name="index">1</property>
+          </packing>
+        </child>
+        <child type="overlay">
+          <object class="GtkRevealer" id="RevealSearch">
+            <property name="width-request">100</property>
+            <property name="height-request">80</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="halign">start</property>
+            <property name="valign">start</property>
+            <property name="margin-top">36</property>
+            <property name="transition-type">slide-right</property>
+            <child>
+              <!-- n-columns=1 n-rows=2 -->
+              <object class="GtkGrid" id="MapSearch">
+                <property name="width-request">100</property>
+                <property name="height-request">80</property>
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <child>
+                  <object class="GtkStack" id="MapSearchStack">
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="transition-type">crossfade</property>
+                    <child>
+                      <!-- n-columns=2 n-rows=3 -->
+                      <object class="GtkGrid" id="MapSearchIntersections">
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <child>
+                          <object class="GtkSearchEntry" id="intersectionEntry1">
+                            <property name="visible">True</property>
+                            <property name="can-focus">True</property>
+                            <property name="hexpand">True</property>
+                            <property name="primary-icon-name">edit-find-symbolic</property>
+                            <property name="primary-icon-activatable">False</property>
+                            <property name="primary-icon-sensitive">False</property>
+                            <property name="placeholder-text" translatable="yes">Street of Intersection 1</property>
+                            <property name="completion">intersect1Completion</property>
+                          </object>
+                          <packing>
+                            <property name="left-attach">0</property>
+                            <property name="top-attach">0</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkSearchEntry" id="intersectionEntry2">
+                            <property name="visible">True</property>
+                            <property name="can-focus">True</property>
+                            <property name="primary-icon-name">edit-find-symbolic</property>
+                            <property name="primary-icon-activatable">False</property>
+                            <property name="primary-icon-sensitive">False</property>
+                            <property name="placeholder-text" translatable="yes">Street of Intersection 2</property>
+                            <property name="completion">intersect2Completion</property>
+                          </object>
+                          <packing>
+                            <property name="left-attach">0</property>
+                            <property name="top-attach">1</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkSearchEntry" id="intersectionEntry3">
+                            <property name="width-request">216</property>
+                            <property name="can-focus">True</property>
+                            <property name="primary-icon-name">edit-find-symbolic</property>
+                            <property name="primary-icon-activatable">False</property>
+                            <property name="primary-icon-sensitive">False</property>
+                            <property name="placeholder-text" translatable="yes">Street of Intersection 3</property>
+                            <property name="completion">intersect3Completion</property>
+                          </object>
+                          <packing>
+                            <property name="left-attach">1</property>
+                            <property name="top-attach">0</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkSearchEntry" id="intersectionEntry4">
+                            <property name="width-request">216</property>
+                            <property name="can-focus">True</property>
+                            <property name="primary-icon-name">edit-find-symbolic</property>
+                            <property name="primary-icon-activatable">False</property>
+                            <property name="primary-icon-sensitive">False</property>
+                            <property name="placeholder-text" translatable="yes">Street of Intersection 4</property>
+                            <property name="completion">intersect4Completion</property>
+                          </object>
+                          <packing>
+                            <property name="left-attach">1</property>
+                            <property name="top-attach">1</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                      </object>
+                      <packing>
+                        <property name="name">Intersections</property>
+                        <property name="title" translatable="yes">Intersections</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <!-- n-columns=2 n-rows=2 -->
+                      <object class="GtkGrid" id="MapSearchStreets">
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <child>
+                          <object class="GtkSearchEntry" id="streetEntry1">
+                            <property name="visible">True</property>
+                            <property name="can-focus">True</property>
+                            <property name="hexpand">True</property>
+                            <property name="primary-icon-name">edit-find-symbolic</property>
+                            <property name="primary-icon-activatable">False</property>
+                            <property name="primary-icon-sensitive">False</property>
+                            <property name="placeholder-text" translatable="yes">Street 1</property>
+                            <property name="completion">street1Completion</property>
+                          </object>
+                          <packing>
+                            <property name="left-attach">0</property>
+                            <property name="top-attach">0</property>
+                            <property name="width">2</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkSearchEntry" id="streetEntry2">
+                            <property name="visible">True</property>
+                            <property name="can-focus">True</property>
+                            <property name="primary-icon-name">edit-find-symbolic</property>
+                            <property name="primary-icon-activatable">False</property>
+                            <property name="primary-icon-sensitive">False</property>
+                            <property name="placeholder-text" translatable="yes">Street 2</property>
+                            <property name="completion">street2Completion</property>
+                          </object>
+                          <packing>
+                            <property name="left-attach">0</property>
+                            <property name="top-attach">1</property>
+                            <property name="width">2</property>
+                          </packing>
+                        </child>
+                      </object>
+                      <packing>
+                        <property name="name">Streets</property>
+                        <property name="title" translatable="yes">Streets</property>
+                        <property name="position">1</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <!-- n-columns=2 n-rows=2 -->
+                      <object class="GtkGrid" id="MapSearchPOI">
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <child>
+                          <object class="GtkSearchEntry" id="poiEntry1">
+                            <property name="visible">True</property>
+                            <property name="can-focus">True</property>
+                            <property name="hexpand">True</property>
+                            <property name="primary-icon-name">edit-find-symbolic</property>
+                            <property name="primary-icon-activatable">False</property>
+                            <property name="primary-icon-sensitive">False</property>
+                            <property name="placeholder-text" translatable="yes">Point of Interest 1</property>
+                            <property name="completion">poi1Completion</property>
+                          </object>
+                          <packing>
+                            <property name="left-attach">0</property>
+                            <property name="top-attach">0</property>
+                            <property name="width">2</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkSearchEntry" id="poiEntry2">
+                            <property name="visible">True</property>
+                            <property name="can-focus">True</property>
+                            <property name="primary-icon-name">edit-find-symbolic</property>
+                            <property name="primary-icon-activatable">False</property>
+                            <property name="primary-icon-sensitive">False</property>
+                            <property name="placeholder-text" translatable="yes">Point of Interest 2</property>
+                            <property name="completion">poi2Completion</property>
+                          </object>
+                          <packing>
+                            <property name="left-attach">0</property>
+                            <property name="top-attach">1</property>
+                            <property name="width">2</property>
+                          </packing>
+                        </child>
+                      </object>
+                      <packing>
+                        <property name="name">Points of Interest</property>
+                        <property name="title" translatable="yes">Points of Interest</property>
+                        <property name="position">2</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <!-- n-columns=2 n-rows=2 -->
+                      <object class="GtkGrid" id="MapSearchFeatures">
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <child>
+                          <object class="GtkSearchEntry" id="featureEntry1">
+                            <property name="visible">True</property>
+                            <property name="can-focus">True</property>
+                            <property name="hexpand">True</property>
+                            <property name="primary-icon-name">edit-find-symbolic</property>
+                            <property name="primary-icon-activatable">False</property>
+                            <property name="primary-icon-sensitive">False</property>
+                            <property name="placeholder-text" translatable="yes">Feature 1</property>
+                            <property name="completion">feature1Completion</property>
+                          </object>
+                          <packing>
+                            <property name="left-attach">0</property>
+                            <property name="top-attach">0</property>
+                            <property name="width">2</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkSearchEntry" id="featureEntry2">
+                            <property name="visible">True</property>
+                            <property name="can-focus">True</property>
+                            <property name="primary-icon-name">edit-find-symbolic</property>
+                            <property name="primary-icon-activatable">False</property>
+                            <property name="primary-icon-sensitive">False</property>
+                            <property name="placeholder-text" translatable="yes">Feature 2</property>
+                            <property name="completion">feature2Completion</property>
+                          </object>
+                          <packing>
+                            <property name="left-attach">0</property>
+                            <property name="top-attach">1</property>
+                            <property name="width">2</property>
+                          </packing>
+                        </child>
+                      </object>
+                      <packing>
+                        <property name="name">Features</property>
+                        <property name="title" translatable="yes">Features</property>
+                        <property name="position">3</property>
+                      </packing>
+                    </child>
+                  </object>
+                  <packing>
+                    <property name="left-attach">0</property>
+                    <property name="top-attach">1</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkStackSwitcher" id="MapSearchSwitch">
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="icon-size">0</property>
+                    <property name="stack">MapSearchStack</property>
+                  </object>
+                  <packing>
+                    <property name="left-attach">0</property>
+                    <property name="top-attach">0</property>
+                  </packing>
+                </child>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="pass-through">True</property>
+            <property name="index">1</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>
